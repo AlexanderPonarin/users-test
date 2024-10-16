@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { RootState } from '../../store/redux/store';
 import { useAppDispatch, useAppSelector } from '../../store/redux/hooks';
 import { useEffect, useState } from 'react';
@@ -24,7 +24,6 @@ export default function UserProfilePage() {
   const [user, setUser] = useState<UserType | null>(null);
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const {
     register,
@@ -38,9 +37,6 @@ export default function UserProfilePage() {
       const user = users.find((user) => user.id === Number(id)) || null;
       if (user) {
         setUser(user);
-      }
-      if (!user) {
-        navigate('/*');
       }
     }
   }, [users, id]);
@@ -81,6 +77,8 @@ export default function UserProfilePage() {
         }
         return user;
       });
+      console.log('new user data', userData);
+      console.log('users', newUsers);
 
       dispatch(setUsers(newUsers));
     } catch (e) {
