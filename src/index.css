@@ -1,0 +1,9 @@
+@import './style/reset.scss';
+@import './style/variables.scss';
+@import './style/main.scss';
+@import './style/sorting.scss';
+@import './style/user-card.scss';
+@import './style/user-profile.scss';
+@import './style/burger.scss';
+@import './style/not-found.scss';
+@import './style/loader.scss';

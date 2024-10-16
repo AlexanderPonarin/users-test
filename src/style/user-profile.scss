@@ -1,0 +1,125 @@
+@import './variables.scss';
+
+.user-profile {
+  width: 100%;
+  margin-top: 10px;
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__form-fields {
+    width: 100%;
+    border: 1px dashed rgb(243, 243, 243);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__form-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    &.comment {
+      width: 99%;
+    }
+  }
+
+  &__label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 9px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0%;
+    text-align: left;
+    transition: all 0.5s ease;
+
+    &.error {
+      border: 1px solid red;
+    }
+
+    &:focus {
+      transition: all 0.5s ease;
+      outline: none;
+      border: 1px solid $color-accent;
+    }
+
+    &.comment {
+      height: 55px;
+    }
+
+    &:read-only {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__wrap {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    padding: 5px 10px;
+    background: rgb(82, 207, 79);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: left;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    align-self: end;
+    border: 1px solid rgb(82, 207, 79);
+
+    &:hover:not(:disabled) {
+      transition: all 0.5s ease;
+      background: #ffff;
+      color: rgb(82, 207, 79);
+      border: 1px solid rgb(82, 207, 79);
+    }
+
+    &:disabled {
+      background: rgb(175, 175, 175);
+      border: 1px solid rgb(175, 175, 175);
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .user-profile__form-item {
+    width: 100%;
+  }
+
+  .user-profile__button {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
