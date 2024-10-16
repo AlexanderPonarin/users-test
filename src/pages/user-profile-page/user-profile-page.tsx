@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { setUsers } from '../../store/redux/slices/users';
 import { UserType } from '../../types/user';
-import NotFoundPage from '../not-found-page/not-found-page';
 
 interface IFormInputs {
   name: string;
